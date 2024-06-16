@@ -1,38 +1,57 @@
-# create-svelte
+FakeStore TypeScript Svelte App
+===============================
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This project is a single-page application (SPA) developed using Svelte, Tailwind, and TypeScript. It retrieves product data from the FakeStoreAPI and provides various features for users to browse and shop for products.
 
-## Creating a project
+Features
+--------
 
-If you're seeing this, you've probably already done this step. Congrats!
+1.  **Product Display:** Products are displayed in a grid format, showing relevant information such as name, price, and image.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+2.  **Product Filtering:** Users can filter products by category using a dropdown menu or clickable category links.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+3.  **Pagination and Infinite Scrolling:** The product list supports both pagination and infinite scrolling for seamless browsing.
 
-## Developing
+4.  **Product Details Page:** Clicking on a product shows detailed information about that product on a separate page.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+5.  **Shopping Cart:** Users can add products to their shopping cart and remove them as needed.
 
-```bash
-npm run dev
+6.  **Search Functionality:** A search bar allows users to search for products by name or description, providing a quick way to find specific items.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+7.  **Advanced Filtering and Sorting:** Additional filtering options such as price range and rating, along with sorting options by price and popularity, enhance the browsing experience.
 
-## Building
+Development Process
+-------------------
 
-To create a production version of your app:
+-   **Version Control:** Git was used throughout the development process, ensuring atomic commits and easy collaboration.
 
-```bash
-npm run build
-```
+Deployment
+----------
 
-You can preview the production build with `npm run preview`.
+The project is deployed using Netlify and features a CI/CD pipeline set up through GitHub. Any changes pushed to the main branch automatically trigger deployment, ensuring seamless updates for users.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Getting Started
+---------------
+
+1.  Clone the repository:
+
+    
+
+    `git clone https://github.com/IamKishan08/fakestore.git`
+
+2.  Install dependencies:
+
+    
+
+    
+
+    `cd fakestore`
+    `npm install`
+
+3.  Run the development server:
+
+    
+
+    `npm run dev`
+
+4.  Open your browser and navigate to `http://localhost:5173` to view the application.
