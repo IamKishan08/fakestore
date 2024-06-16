@@ -8,13 +8,13 @@ Features
 
 1.  **Product Display:** Products are displayed in a grid format, showing relevant information such as name, price, and image.
 
-2.  **Product Filtering:** Users can filter products by category using a dropdown menu or clickable category links.
+2.  **Product Filtering:** Users can filter products by category using a  clickable category links.
 
 3.  **Pagination and Infinite Scrolling:** The product list supports both pagination and infinite scrolling for seamless browsing.
 
 4.  **Product Details Page:** Clicking on a product shows detailed information about that product on a separate page.
 
-5.  **Shopping Cart:** Users can add products to their shopping cart and remove them as needed.
+5.  **Shopping Cart:** Users can add products to their shopping cart and remove them as needed. The shopping cart state is stored using local storage, ensuring persistent cart data even after page refresh.
 
 6.  **Search Functionality:** A search bar allows users to search for products by name or description, providing a quick way to find specific items.
 
