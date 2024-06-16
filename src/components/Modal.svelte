@@ -7,6 +7,8 @@
     export let product: Product | null = null;
     export let closeModal: () => void;
 
+    let showToast = false;
+
     // Function to add the product to the cart
     const addToCart = () => {
         if (product) {
@@ -19,6 +21,11 @@
                 }
                 return items;
             });
+            // Show toast message
+            showToast = true;
+            setTimeout(() => {
+                showToast = false;
+            }, 2000); // Hide toast after 2 seconds
         }
     };
 
@@ -59,6 +66,11 @@
                 <button class="bg-black text-white px-4 py-2 mt-4 custom-color" on:click={addToCart}>Add to Cart</button>
             </div>
         </div>
+    </div>
+{/if}
+{#if showToast}
+    <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded shadow-lg z-50" role="status" aria-live="polite">
+        Added to cart
     </div>
 {/if}
 

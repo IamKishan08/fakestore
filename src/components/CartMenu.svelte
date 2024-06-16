@@ -1,6 +1,35 @@
 <script lang="ts">
-    import { writable } from 'svelte/store';
+    import { writable, get } from 'svelte/store';
     import { cart } from '../stores/stores';
+
+    // Function to load cart from local storage
+    const loadCartFromLocalStorage = () => {
+        if (typeof localStorage !== 'undefined') {
+            console.log('Attempting to load cart from local storage...');
+            const storedCart = localStorage.getItem('cart');
+            if (storedCart) {
+                console.log('Cart loaded from local storage:', JSON.parse(storedCart));
+                return JSON.parse(storedCart);
+            } else {
+                console.log('No cart found in local storage.');
+            }
+        }
+        return [];
+    };
+
+    // Function to save cart to local storage
+    const saveCartToLocalStorage = (items: any[]) => {
+        if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('cart', JSON.stringify(items));
+            console.log('Cart saved to local storage:', items);
+        }
+    };
+
+    // Initialize cart with items from local storage if in the browser
+    if (typeof localStorage !== 'undefined') {
+        const initialCart = loadCartFromLocalStorage();
+        cart.set(initialCart);
+    }
 
     export let isOpen = writable(false);
 
@@ -12,6 +41,7 @@
         cart.update(items => {
             const item = items.find(i => i.id === id);
             if (item) item.quantity += 1;
+            saveCartToLocalStorage(items);
             return items;
         });
     };
@@ -22,12 +52,19 @@
             if (item && item.quantity > 1) {
                 item.quantity -= 1;
             } else {
-                return items.filter(i => i.id !== id);
+                items = items.filter(i => i.id !== id);
             }
+            saveCartToLocalStorage(items);
             return items;
         });
-    };  
+    };
 
+    // Subscribe to cart store to save changes to local storage
+    cart.subscribe(items => {
+        saveCartToLocalStorage(items);
+    });
+
+    // Calculate total amount
     $: totalAmount = $cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 </script>
 
@@ -37,7 +74,7 @@
         <button class="text-2xl" on:click={closeCart}>&times;</button>
     </div>
     <div class="p-4 overflow-y-auto cart-items">
-        {#each $cart as item ,i}
+        {#each $cart as item, i}
             <div class="flex justify-between items-center mb-4">
                 <img src={item.image} alt={item.title} class="w-20 h-20 object-cover">
                 <div class="flex-1 mx-4">
