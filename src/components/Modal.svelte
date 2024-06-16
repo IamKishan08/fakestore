@@ -1,31 +1,35 @@
 <script lang="ts">
+    // Import the Product type and cart store from stores
     import type { Product } from '../stores/stores';
     import { cart } from '../stores/stores';
 
+    // Export product and closeModal properties
     export let product: Product | null = null;
     export let closeModal: () => void;
 
+    // Function to add the product to the cart
     const addToCart = () => {
         if (product) {
             cart.update((items) => {
                 const existing = items.find(item => item.id === product.id);
                 if (existing) {
-                    existing.quantity += 1;
+                    existing.quantity += 1; // Increment quantity if product already in cart
                 } else {
-                    items.push({ ...product, quantity: 1 });
+                    items.push({ ...product, quantity: 1 }); // Add new product to cart
                 }
                 return items;
             });
         }
     };
 
+    // Function to get star rating based on the product rating
     const getRatingStars = (rating: number) => {
         let stars = [];
         for (let i = 1; i <= 5; i++) {
             if (i <= rating) {
-                stars.push('★'); // full star
+                stars.push('★'); // Full star
             } else {
-                stars.push('☆'); // empty star
+                stars.push('☆'); // Empty star
             }
         }
         return stars.join(' ');
@@ -72,10 +76,10 @@
     .content-wrapper {
         max-height: 70vh;
         overflow-y: auto;
-        scrollbar-width: none; /* Hide scrollbar in Firefox */
+        scrollbar-width: none; 
     }
     .content-wrapper::-webkit-scrollbar {
-        display: none; /* Hide scrollbar in WebKit browsers */
+        display: none;
     }
     /* For star ratings */
     .text-yellow-500 {

@@ -14,7 +14,7 @@
         <button class="category-button" on:click={() => selectCategory(category)}>{category}</button>
     {/each}
 </div>
-
+<!-- Style -->
 <style>
     .category-container {
         display: flex;
@@ -36,7 +36,6 @@
     .category-button {
         flex: 0 0 auto;
         padding: 0.5rem 1rem;
-        background-color: #e5e7eb;
         margin-right: 0.5rem;
         white-space: nowrap;
         border: 2px solid transparent; /* Initial transparent border */
@@ -44,6 +43,12 @@
         background-image: linear-gradient(to right, #3498db, #2980b9); /* Blue gradient background */
         background-clip: padding-box; /* Clip background to padding box */
         color: white; /* Text color */
+        transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+    }
+
+    .category-button:hover {
+        background-image: linear-gradient(to right, #2980b9, #1e6a9a); /* Darker gradient on hover */
+        border-color: #fff; /* White border on hover */
     }
 
     @media (min-width: 768px) {
@@ -57,6 +62,7 @@
             font-size: 1rem; /* Increase font size for desktop */
         }
     }
+
     @media (min-width: 400px) {
         .category-button {
             font-size: 0.875rem; /* Adjust font size for 400px screens */

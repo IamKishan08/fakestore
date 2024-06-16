@@ -1,14 +1,12 @@
 <script>
-    // Add any necessary script here
+    // No additional script needed for now
 </script>
 
 <footer class="bg-gray-800 text-white p-4 mt-auto">
     <div class="container mx-auto text-center">
         <p>&copy; {new Date().getFullYear()} FakeStore. All rights reserved.</p>
-        <p>Follow us on:
-            <a href="/" class="text-blue-600 ml-2">Facebook</a>
-            <a href="/" class="text-blue-600 ml-2">Twitter</a>
-            <a href="/" class="text-blue-600 ml-2">Instagram</a>
+        <p>View source code:
+            <a href="https://github.com/IamKishan08/fakestore.git" target="_blank" class="text-blue-600 ml-2">Github</a>
         </p>
     </div>
 </footer>
@@ -21,4 +19,11 @@
         bottom: 0;
     }
 
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 </style>
