@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { selectedCategory } from '../stores/stores';
+    import { selectedCategory, currentPage } from '../stores/stores';
 
     const categories = ["electronics", "jewelery", "men's clothing", "women's clothing"];
 
     const selectCategory = (category: string | null) => {
         selectedCategory.set(category);
+        currentPage.set(1);
     };
 </script>
 
