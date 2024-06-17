@@ -2,7 +2,7 @@
     // No additional script needed for now
 </script>
 
-<footer class="bg-gray-800 text-white p-4 mt-auto">
+<footer class="bg-gray-800 text-white p-4 mt-auto" role="contentinfo">
     <div class="container mx-auto text-center">
         <p>&copy; {new Date().getFullYear()} FakeStore. All rights reserved.</p>
         <p>View source code:

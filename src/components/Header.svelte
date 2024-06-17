@@ -26,7 +26,7 @@
   }
 </style>
 
-<header class="fixed w-full top-0 left-0 flex justify-between items-center p-4 bg-sky-100 z-50">
+<header class="fixed w-full top-0 left-0 flex justify-between items-center p-4 bg-sky-100 z-50" role="banner">
   <h1 class="text-2xl font-extrabold italic text-white">FakeStore</h1>
   <button class="px-4 py-2 bg-black text-white relative custom-color" on:click={openCart}>
       Cart ({cartCount})
