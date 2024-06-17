@@ -2,7 +2,7 @@
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
 		"lib": ["DOM", "ES2020"],
-		"types": ["svelte", "vite/client"],
+		"types": ["svelte", "vite/client","jest"],
 		"target": "es2020",
 		"allowJs": true,
 		"checkJs": true,

@@ -57,7 +57,7 @@
         min-width: 200px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         z-index: 1;
-        right: 0; /* Align the dropdown content to the right */
+        right: 0;
     }
 
     .dropdown:hover .dropdown-content {
@@ -73,7 +73,7 @@
         align-items: flex-start;
     }
     .md\:order-last {
-        order: 9999; /* Ensures these items appear at the end in mobile view */
+        order: 9999; 
     }
 }
 </style>

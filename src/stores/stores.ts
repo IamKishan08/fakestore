@@ -29,6 +29,8 @@ export const selectedCategory = writable<string | null>(null);
 // Writable store to hold the search query
 export const searchQuery = writable<string>('');
 
+export const isOpen = writable(false);
+
 // Writable stores for new filters and sorting options
 export const minPrice = writable<number>(0);
 export const maxPrice = writable<number>(Infinity);
