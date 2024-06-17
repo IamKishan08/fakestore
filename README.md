@@ -46,12 +46,19 @@ Getting Started
     
 
     `cd fakestore`
+    
     `npm install`
 
-3.  Run the development server:
+4.  Run the development server:
 
     
 
     `npm run dev`
 
-4.  Open your browser and navigate to `http://localhost:5173` to view the application.
+5.  Open your browser and navigate to `http://localhost:5173` to view the application.
+
+Testing
+---------------
+   Vitest is used for unit testing the components. Use the following command to run the tests:
+
+   `npm test`
